@@ -138,7 +138,7 @@ const About = () => {
                         <div className="absolute bottom-8 left-0 right-0 px-6 z-40 flex justify-between items-end gap-4 w-full">
                             {[
                                 { label: "Experience", value: "2+ Yrs" },
-                                { label: "Specialty", value: "Gohighlevel" }
+                                { label: "Specialty", value: "Frontend Developer & Automation Expert" },
                             ].map((stat, i) => (
                                 <motion.div
                                     key={i}
