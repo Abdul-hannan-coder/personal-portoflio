@@ -88,7 +88,7 @@ export const TestimonialsColumn = (props: {
                         <React.Fragment key={index}>
                             {props.testimonials.map(({ text, image, name, role }, i) => (
                                 <div className="p-8 rounded-[2rem] border border-white/5 bg-[#0d0d0d] shadow-[0_20px_50px_-10px_rgba(255,106,0,0.1)] max-w-sm w-full hover:border-accent-primary/30 transition-colors duration-300" key={i}>
-                                    <div className="text-gray-400 text-sm leading-relaxed font-medium">"{text}"</div>
+                                    <div className="text-gray-400 text-sm leading-relaxed">{text}</div>
                                     <div className="flex items-center gap-4 mt-6 pt-6 border-t border-white/5">
                                         <img
                                             width={48}
@@ -98,8 +98,8 @@ export const TestimonialsColumn = (props: {
                                             className="h-12 w-12 rounded-full object-cover border-2 border-accent-primary/20"
                                         />
                                         <div className="flex flex-col">
-                                            <div className="font-bold tracking-tight text-white">{name}</div>
-                                            <div className="text-xs font-semibold text-accent-primary/80 uppercase tracking-widest">{role}</div>
+                                            <div className="font-semibold text-white">{name}</div>
+                                            <div className="subheading text-xs">{role}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -126,12 +126,12 @@ export default function Testimonials() {
                     className="flex flex-col items-center justify-center max-w-[640px] mx-auto text-center"
                 >
                     <div className="flex justify-center mb-6">
-                        <div className="bg-accent-primary/10 text-accent-primary px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase border border-accent-primary/20">
+                        <div className="subheading bg-accent-primary/10 text-accent-primary px-4 py-1.5 rounded-full border border-accent-primary/20">
                             Testimonials
                         </div>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-tighter leading-none mb-6">
+                    <h2 className="heading-xl text-white mb-6">
                         Loved by <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary to-accent-secondary">clients</span> <br className="hidden sm:block" /> everywhere
                     </h2>
                     <p className="text-lg text-gray-400 mt-6 font-medium leading-relaxed">

@@ -6,7 +6,9 @@
 
 @theme {
   --font-inter: var(--font-inter);
+  --font-grotesk: var(--font-grotesk);
   --font-sans: var(--font-inter), sans-serif;
+  --font-heading: var(--font-grotesk), var(--font-inter), sans-serif;
 
   /* Make CSS variables available to Tailwind 4 config */
   --color-bg-primary: var(--bg-primary);
@@ -86,8 +88,26 @@
     );
     color: var(--text-primary);
     font-family: var(--font-inter), 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
     min-height: 100vh;
     @apply bg-background text-foreground;
+  }
+  
+  h1 {
+    @apply font-heading font-bold tracking-tight;
+  }
+  
+  h2 {
+    @apply font-heading font-bold tracking-tight;
+  }
+  
+  h3 {
+    @apply font-heading font-semibold tracking-tight;
+  }
+  
+  h4, h5, h6 {
+    @apply font-heading font-semibold;
   }
   * {
     @apply border-border outline-ring/50;
@@ -102,6 +122,39 @@
   .glow {
     box-shadow: 0 0 10px var(--accent-primary),
                 0 0 20px var(--accent-primary);
+  }
+
+  /* Typography Classes */
+  .heading-xl {
+    @apply text-4xl md:text-5xl lg:text-6xl font-heading font-bold tracking-tight;
+  }
+
+  .heading-lg {
+    @apply text-3xl md:text-4xl font-heading font-bold tracking-tight;
+  }
+
+  .heading-md {
+    @apply text-2xl md:text-3xl font-heading font-semibold tracking-tight;
+  }
+
+  .heading-sm {
+    @apply text-xl md:text-2xl font-heading font-semibold tracking-tight;
+  }
+
+  .subheading {
+    @apply text-sm md:text-base font-semibold tracking-[0.1em] uppercase text-accent-primary/80;
+  }
+
+  .body-lg {
+    @apply text-lg leading-relaxed font-medium;
+  }
+
+  .body-md {
+    @apply text-base leading-relaxed font-normal;
+  }
+
+  .label {
+    @apply text-xs md:text-sm font-semibold tracking-[0.15em] uppercase;
   }
 }
 

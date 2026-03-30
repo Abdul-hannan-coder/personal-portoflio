@@ -48,7 +48,7 @@ export default function SocialLinks() {
                         </div>
 
                         {/* Tooltip */}
-                        <span className="absolute -top-12 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 group-focus:scale-100 transition-all duration-300 bg-white text-black text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded shadow-[0_0_20px_rgba(255,255,255,0.3)] whitespace-nowrap pointer-events-none translate-y-4 group-hover:translate-y-0 group-focus:translate-y-0">
+                        <span className="absolute -top-12 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 group-focus:scale-100 transition-all duration-300 bg-white text-black text-xs font-semibold uppercase tracking-wide px-3 py-1.5 rounded shadow-[0_0_20px_rgba(255,255,255,0.3)] whitespace-nowrap pointer-events-none translate-y-4 group-hover:translate-y-0 group-focus:translate-y-0">
                             {social.label}
                             <div className="absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-white" />
                         </span>

@@ -89,11 +89,11 @@ const About = () => {
                         <Link
                             href="/hannan-cv.pdf"
                             target="_blank"
-                            className="w-full sm:w-auto px-10 py-5 bg-accent-primary text-white font-black rounded-2xl uppercase tracking-widest text-xs shadow-[0_0_30px_rgba(255,106,0,0.3)] hover:shadow-[0_0_50px_rgba(255,106,0,0.5)] transition-all flex items-center justify-center gap-2 group"
+                            className="w-full sm:w-auto px-10 py-5 bg-accent-primary text-white font-semibold rounded-2xl text-xs shadow-[0_0_30px_rgba(255,106,0,0.3)] hover:shadow-[0_0_50px_rgba(255,106,0,0.5)] transition-all flex items-center justify-center gap-2 group uppercase tracking-wide"
                         >
                             Download CV
                         </Link>
-                        <Link href="#contact" className="text-xs font-black uppercase tracking-widest text-text-secondary hover:text-accent-primary transition-colors border-b-2 border-transparent hover:border-accent-primary pb-1">
+                        <Link href="#contact" className="text-xs font-semibold text-text-secondary hover:text-accent-primary transition-colors border-b-2 border-transparent hover:border-accent-primary pb-1 uppercase tracking-wide">
                             Let's Connect_
                         </Link>
                     </div>

@@ -133,7 +133,7 @@ export default function Contact() {
                     type="submit"
                     disabled={isSubmitting || isSubmitted}
                     className={cn(
-                        "w-full h-14 text-sm font-black transition-all duration-500 rounded-xl uppercase tracking-widest border border-white/5",
+                        "w-full h-14 text-sm font-semibold transition-all duration-500 rounded-xl uppercase tracking-wide border border-white/5",
                         isSubmitted ? "bg-[#4ADE80] hover:bg-[#22c55e] text-black shadow-[0_0_20px_rgba(74,222,128,0.3)]" : "bg-bg-primary hover:bg-white/5 text-white hover:border-accent-primary/50 hover:shadow-[0_0_30px_rgba(255,106,0,0.15)]"
                     )}
                   >

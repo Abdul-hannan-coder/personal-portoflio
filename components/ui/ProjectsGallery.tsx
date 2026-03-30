@@ -23,11 +23,11 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
         >
             <div className="relative aspect-[16/10] sm:aspect-video w-full overflow-hidden shrink-0">
                 <div className="absolute top-4 left-4 z-20 flex flex-wrap gap-2">
-                    <span className="px-3 py-1.5 text-[10px] font-black bg-white/10 backdrop-blur-md text-white rounded-full border border-white/5 uppercase tracking-widest">
+                    <span className="px-3 py-1.5 subheading bg-white/10 backdrop-blur-md text-white rounded-full border border-white/5">
                         {project.category}
                     </span>
                     {project.isFeatured && (
-                        <span className="px-3 py-1.5 text-[10px] font-black bg-accent-primary text-black rounded-full uppercase tracking-widest flex items-center gap-1 shadow-[0_0_15px_rgba(255,106,0,0.4)]">
+                        <span className="px-3 py-1.5 text-xs font-semibold bg-accent-primary text-black rounded-full flex items-center gap-1 shadow-[0_0_15px_rgba(255,106,0,0.4)]">
                             <Zap className="w-3 h-3 fill-current" /> FEATURED
                         </span>
                     )}
@@ -43,7 +43,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
 
             <div className="relative z-20 flex flex-col flex-grow p-6 sm:p-8 pt-4">
                 <div className="flex items-start justify-between mb-2">
-                    <h3 className="text-xl font-display font-black text-white uppercase tracking-wide leading-tight line-clamp-1 pr-2">
+                    <h3 className="text-xl font-heading font-bold text-white leading-tight line-clamp-1 pr-2">
                         {project.title.split(' - ')[0]}
                     </h3>
                     <div className="text-accent-primary shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
@@ -61,8 +61,8 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
                             <div key={i} className="flex items-center gap-3 bg-white/5 border border-white/5 rounded-xl p-3">
                                 {stat.icon && <stat.icon className="w-4 h-4 text-accent-primary shrink-0 opacity-80" />}
                                 <div className="flex flex-col overflow-hidden">
-                                    <span className="text-[9px] text-gray-500 font-black uppercase tracking-widest leading-none mb-1 line-clamp-1">{stat.label}</span>
-                                    <span className="text-sm font-black text-white leading-none line-clamp-1">{stat.value}</span>
+                                    <span className="text-[9px] text-gray-500 font-semibold uppercase tracking-wide leading-none mb-1 line-clamp-1">{stat.label}</span>
+                                    <span className="text-sm font-bold text-white leading-none line-clamp-1">{stat.value}</span>
                                 </div>
                             </div>
                         ))}

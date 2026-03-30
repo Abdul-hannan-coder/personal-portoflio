@@ -54,7 +54,7 @@ const Navbar = () => {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2v7m-8.66 8L9.5 13.5m11.16 3.5L14.5 13.5" />
                             </svg>
                         </div>
-                        <span className="text-base sm:text-xl md:text-2xl whitespace-nowrap font-display font-black text-white tracking-tighter group-hover:text-accent-primary transition-colors duration-300 font-serif italic">Abdul Hannan</span>
+                        <span className="text-base sm:text-xl md:text-2xl whitespace-nowrap font-heading font-bold text-white tracking-tight group-hover:text-accent-primary transition-colors duration-300">Abdul Hannan</span>
                     </Link>
 
                     {/* Desktop Links (Center) */}
@@ -65,7 +65,7 @@ const Navbar = () => {
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className={`group relative flex items-center gap-1.5 py-2 text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] transition-all ${pathname === link.href ? 'text-accent-primary' : 'text-text-secondary hover:text-white'}`}
+                                    className={`group relative flex items-center gap-1.5 py-2 px-2 text-xs font-semibold tracking-wide transition-all ${pathname === link.href ? 'text-accent-primary' : 'text-text-secondary hover:text-white'}`}
                                 >
                                     <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 opacity-70 group-hover:opacity-100 transition-opacity" />
                                     {link.name}
@@ -86,7 +86,7 @@ const Navbar = () => {
                         <Link
                             href="/#contact"
                             onClick={handleContactClick}
-                            className="relative group px-4 md:px-8 py-2 md:py-3 rounded-full bg-accent-primary text-white text-[9px] md:text-[10px] font-black uppercase tracking-[0.15em] md:tracking-[0.2em] shadow-[0_0_20px_rgba(255,106,0,0.3)] hover:shadow-[0_0_35px_rgba(255,106,0,0.6)] transition-all overflow-hidden whitespace-nowrap flex"
+                            className="relative group px-4 md:px-8 py-2 md:py-3 rounded-full bg-accent-primary text-white text-xs md:text-sm font-semibold shadow-[0_0_20px_rgba(255,106,0,0.3)] hover:shadow-[0_0_35px_rgba(255,106,0,0.6)] transition-all overflow-hidden whitespace-nowrap flex"
                         >
                             <span className="relative z-10 group-hover:text-accent-primary transition-colors duration-300">Contact Us</span>
                             <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300" />

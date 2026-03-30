@@ -34,7 +34,7 @@ export default function FeatureWheel() {
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-secondary opacity-60" />
                             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent-secondary" />
                         </span>
-                        <span className="text-[11px] font-black uppercase tracking-[0.2em] text-accent-secondary">Core Expertise</span>
+                        <span className="text-xs font-semibold uppercase tracking-wide text-accent-secondary">Core Expertise</span>
                     </div>
                 </motion.div>
 

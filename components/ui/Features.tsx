@@ -62,7 +62,7 @@ const Features = () => {
                             {feature.description}
                         </p>
 
-                        <Link href="/features" className="text-[10px] font-black uppercase tracking-[0.2em] text-accent-primary hover:text-white transition-colors flex items-center gap-2 group/link">
+                        <Link href="/features" className="text-xs font-semibold text-accent-primary hover:text-white transition-colors flex items-center gap-2 group/link">
                             Explore Capability
                             <svg className="w-3 h-3 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

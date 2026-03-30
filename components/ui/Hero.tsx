@@ -5,16 +5,16 @@ import { ArrowRight } from 'lucide-react';
 import SocialLinks from "@/components/ui/SocialLinks";
 import LogoLoop from "@/components/ui/LogoLoop";
 const techLogos = [
-    { node: <span className="text-2xl md:text-2xl lg:text-3xl font-black uppercase tracking-widest whitespace-nowrap group-hover/item:text-white transition-colors duration-300">React</span> },
-    { node: <span className="text-2xl md:text-2xl lg:text-3xl font-black uppercase tracking-widest whitespace-nowrap group-hover/item:text-white transition-colors duration-300">Next.js</span> },
-    { node: <span className="text-2xl md:text-2xl lg:text-3xl font-black uppercase tracking-widest whitespace-nowrap group-hover/item:text-white transition-colors duration-300">TypeScript</span> },
-    { node: <span className="text-2xl md:text-2xl lg:text-3xl font-black uppercase tracking-widest whitespace-nowrap group-hover/item:text-white transition-colors duration-300">Tailwind CSS</span> },
-    { node: <span className="text-2xl md:text-2xl lg:text-3xl font-black uppercase tracking-widest whitespace-nowrap group-hover/item:text-white transition-colors duration-300">Framer Motion</span> },
-    { node: <span className="text-2xl md:text-2xl lg:text-3xl font-black uppercase tracking-widest whitespace-nowrap group-hover/item:text-white transition-colors duration-300">Node.js</span> },
-    { node: <span className="text-2xl md:text-2xl lg:text-3xl font-black uppercase tracking-widest whitespace-nowrap group-hover/item:text-white transition-colors duration-300">PostgreSQL</span> },
-    { node: <span className="text-2xl md:text-2xl lg:text-3xl font-black uppercase tracking-widest whitespace-nowrap group-hover/item:text-white transition-colors duration-300">N8N</span> },
-    { node: <span className="text-2xl md:text-2xl lg:text-3xl font-black uppercase tracking-widest whitespace-nowrap group-hover/item:text-white transition-colors duration-300">Make</span> },
-    { node: <span className="text-2xl md:text-2xl lg:text-3xl font-black uppercase tracking-widest whitespace-nowrap group-hover/item:text-white transition-colors duration-300">GoHighLevel</span> },
+    { node: <span className="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap group-hover/item:text-accent-primary transition-colors duration-300">React</span> },
+    { node: <span className="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap group-hover/item:text-accent-primary transition-colors duration-300">Next.js</span> },
+    { node: <span className="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap group-hover/item:text-accent-primary transition-colors duration-300">TypeScript</span> },
+    { node: <span className="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap group-hover/item:text-accent-primary transition-colors duration-300">Tailwind CSS</span> },
+    { node: <span className="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap group-hover/item:text-accent-primary transition-colors duration-300">Framer Motion</span> },
+    { node: <span className="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap group-hover/item:text-accent-primary transition-colors duration-300">Node.js</span> },
+    { node: <span className="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap group-hover/item:text-accent-primary transition-colors duration-300">PostgreSQL</span> },
+    { node: <span className="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap group-hover/item:text-accent-primary transition-colors duration-300">N8N</span> },
+    { node: <span className="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap group-hover/item:text-accent-primary transition-colors duration-300">Make</span> },
+    { node: <span className="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap group-hover/item:text-accent-primary transition-colors duration-300">GoHighLevel</span> },
 ];
 
 export default function Hero() {
@@ -65,7 +65,7 @@ export default function Hero() {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="relative"
                 >
-                    <h1 className="font-display font-black text-5xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.9] text-white mb-8 tracking-tighter">
+                    <h1 className="heading-xl text-white mb-8">
                         CRAFTING THE <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary via-white to-gray-500 animate-gradient-x">
                             DIGITAL FUTURE
@@ -92,13 +92,13 @@ export default function Hero() {
                     transition={{ delay: 0.6, duration: 0.8 }}
                     className="flex flex-col sm:flex-row gap-6 mb-12 w-full sm:w-auto px-6"
                 >
-                    <a href="#projects" className="group relative overflow-hidden bg-accent-primary text-white font-black py-5 px-12 rounded-2xl transition-all shadow-[0_0_30px_rgba(255,106,0,0.3)] hover:shadow-[0_0_50px_rgba(255,106,0,0.5)] flex items-center justify-center gap-3 uppercase tracking-widest text-sm">
+                    <a href="#projects" className="group relative overflow-hidden bg-accent-primary text-white font-semibold py-5 px-12 rounded-2xl transition-all shadow-[0_0_30px_rgba(255,106,0,0.3)] hover:shadow-[0_0_50px_rgba(255,106,0,0.5)] flex items-center justify-center gap-3 uppercase tracking-widest text-sm">
                         <span className="relative z-10 flex items-center gap-2 group-hover:text-accent-primary transition-colors duration-300">
                             View Projects <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </span>
                         <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                     </a>
-                    <a href="#contact" className="bg-transparent border-2 border-white/10 hover:border-accent-primary text-white hover:text-accent-primary font-black py-5 px-12 rounded-2xl transition-all backdrop-blur-md flex items-center justify-center gap-2 uppercase tracking-widest text-sm group">
+                    <a href="#contact" className="bg-transparent border-2 border-white/10 hover:border-accent-primary text-white hover:text-accent-primary font-semibold py-5 px-12 rounded-2xl transition-all backdrop-blur-md flex items-center justify-center gap-2 uppercase tracking-wide text-sm group">
                         Get in Touch
                     </a>
                 </motion.div>
@@ -116,7 +116,7 @@ export default function Hero() {
                 transition={{ duration: 1, delay: 1.2 }}
                 className="w-full mt-0"
             >
-                <p className="text-[10px] font-black text-text-primary uppercase tracking-[0.4em] mb-8 text-center opacity-60">
+                <p className="text-xs font-semibold text-text-secondary uppercase tracking-wide mb-8 text-center opacity-60">
                     Cutting-Edge AI Solutions & Automations
                 </p>
                 <LogoLoop
