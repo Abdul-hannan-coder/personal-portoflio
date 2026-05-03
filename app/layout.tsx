@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, Syne } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/ui/navbar";
 
@@ -34,12 +33,6 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
-        <Script
-          src="https://beta.leadconnectorhq.com/loader.js"
-          data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js"
-          data-widget-id="69f78d19a4b26cb299f2eea9"
-          strategy="afterInteractive"
-        />
       </body>
     </html>
   );
