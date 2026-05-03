@@ -1,8 +1,9 @@
 import ProjectsGallery from '@/components/ui/ProjectsGallery';
+import { portfolio } from '@/lib/portfolio';
 
 export const metadata = {
-    title: 'Projects | Work Arsenal',
-    description: 'Explore my featured deployments and full stack web applications.',
+    title: `${portfolio.projects?.title} | ${portfolio.personal?.name?.trim()}`,
+    description: portfolio.projects?.subtitle,
 };
 
 export default function ProjectsPage() {

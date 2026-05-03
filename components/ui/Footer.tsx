@@ -4,21 +4,14 @@ import React from "react";
 import Link from "next/link";
 import { Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import { navLinks, portfolio, socialLinks } from '@/lib/portfolio';
 
-const socialLinks = [
-    { Icon: Linkedin, href: "https://www.linkedin.com/in/abdul-hannan-bhatti/", label: "LinkedIn" },
-    { Icon: Github, href: "https://github.com/Abdul-hannan-coder", label: "GitHub" },
-    { Icon: FaWhatsapp, href: "https://wa.me/+923334688363", label: "WhatsApp" },
-    { Icon: Mail, href: "mailto:abdulhannan.personal@gmail.com", label: "Email" },
-];
-
-const navLinks = [
-    { label: "About", href: "#about" },
-    { label: "Projects", href: "#projects" },
-    { label: "Testimonials", href: "#testimonials" },
-    { label: "FAQ", href: "#faq" },
-    { label: "Contact", href: "#contact" },
-];
+const iconMap = {
+    linkedin: Linkedin,
+    github: Github,
+    whatsapp: FaWhatsapp,
+    email: Mail,
+};
 
 const Footer = () => {
     return (
@@ -40,24 +33,26 @@ const Footer = () => {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2v7m-8.66 8L9.5 13.5m11.16 3.5L14.5 13.5" />
                                     </svg>
                                 </div>
-                                <span className="text-xl sm:text-xl font-display font-black text-white tracking-tighter group-hover:text-accent-primary transition-colors font-serif italic">Abdul Hannan</span>
+                                <span className="text-xl sm:text-xl font-display font-black text-white tracking-tighter group-hover:text-accent-primary transition-colors font-serif italic">{portfolio.personal?.name?.trim()}</span>
                             </Link>
                             <p className="text-gray-500 text-sm font-medium max-w-md leading-relaxed mb-8">
-                                Engineering immersive digital experiences. AI Automation, Full-stack development, and products that scale.
+                                {portfolio.footer?.subtitle}
                             </p>
                             <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                                {socialLinks.map(({ Icon, href, label }, i) => (
+                                {socialLinks.map(({ icon, href, name }, i) => {
+                                    const Icon = iconMap[icon as keyof typeof iconMap] || Github;
+                                    return (
                                     <a
                                         key={i}
                                         href={href}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        aria-label={label}
+                                        aria-label={name}
                                         className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-accent-primary hover:border-accent-primary/30 hover:bg-accent-primary/5 transition-all duration-300 hover:scale-110"
                                     >
                                         <Icon size={20} className="shrink-0" />
                                     </a>
-                                ))}
+                                )})}
                             </div>
                         </div>
 
@@ -65,13 +60,13 @@ const Footer = () => {
                         <div className="lg:col-span-5 flex flex-col items-center lg:items-end text-center lg:text-right">
                             <h4 className="text-white font-display font-bold text-sm uppercase tracking-[0.2em] mb-6">Navigate</h4>
                             <ul className="space-y-4">
-                                {navLinks.map(({ label, href }) => (
-                                    <li key={label}>
+                                {navLinks.map(({ name, href }) => (
+                                    <li key={name}>
                                         <Link
-                                            href={href}
+                                            href={href === '/' ? '/' : href}
                                             className="text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-accent-primary transition-colors inline-flex items-center justify-center lg:justify-end gap-2 group py-1"
                                         >
-                                            {label}
+                                            {name}
                                             <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-all translate-y-0.5 group-hover:translate-y-0 text-accent-primary" />
                                         </Link>
                                     </li>
@@ -84,7 +79,7 @@ const Footer = () => {
                 {/* Bottom bar */}
                 <div className="py-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-6">
                     <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-600 text-center sm:text-left order-2 sm:order-1">
-                        &copy; {new Date().getFullYear()} FronixTech. All rights reserved.
+                        &copy; {new Date().getFullYear()} {portfolio.personal?.name?.trim()}. All rights reserved.
                     </p>
                     <div className="flex flex-wrap justify-center gap-8 order-1 sm:order-2">
                         <Link href="#" className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-600 hover:text-white transition-colors">

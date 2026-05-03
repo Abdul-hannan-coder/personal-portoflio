@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Sparkles, Palette, Cog, Cloud } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { portfolio } from '@/lib/portfolio';
 
 const About = () => {
     return (
@@ -22,28 +23,25 @@ const About = () => {
                 >
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-primary/10 border border-accent-primary/20 text-accent-primary text-xs font-bold mb-8 tracking-widest uppercase">
                         <Sparkles className="w-4 h-4" />
-                        <span>Meet the Architect</span>
+                        <span>{portfolio.about?.title}</span>
                     </div>
 
                     <h2 className="font-display font-black text-5xl md:text-6xl text-white mb-8 leading-[0.9] tracking-tighter uppercase whitespace-nowrap">
-                        ABDUL <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary to-accent-secondary">HANNAN</span>
+                        {portfolio.about?.highlightedTitle?.split(' ')[0] || 'ABOUT'} <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary to-accent-secondary">{portfolio.about?.highlightedTitle?.split(' ').slice(1).join(' ')}</span>
                     </h2>
 
                     <div className="flex gap-4 mb-8">
                         <div className="w-1.5 bg-accent-primary rounded-full shrink-0" />
                         <p className="text-gray-300 text-lg md:text-xl leading-relaxed font-bold tracking-wide italic">
-                            "Frontend Engineer | Automation and Gohighlevel Expert"
+                            "{portfolio.personal?.tagline}"
                         </p>
                     </div>
 
                     <div className="space-y-6 text-text-secondary text-sm md:text-base leading-relaxed mb-10">
-                        <p>
-                            I am a passionate and dedicated software engineer with a strong background in <span className="text-white font-bold">frontend development</span> and <span className="text-white font-bold">automation</span>. With over 2 years of experience in the industry, I have honed my skills in building high-performance web applications and automating business processes.
-                        </p>
-                        <p>
-                            My expertise lies in creating seamless user experiences and helping businesses enhance their online presence through innovative solutions. I am committed to continuous learning and staying up-to-date with the latest technologies to deliver exceptional results for my clients.
-                        </p>
+                        {(portfolio.about?.paragraphs || []).map((paragraph, idx) => (
+                            <p key={idx}>{paragraph}</p>
+                        ))}
 
                         <div className="pt-8 border-t border-white/5 space-y-6">
                             <h3 className="text-white font-black tracking-widest uppercase text-xs mb-4">What I'm Doing</h3>

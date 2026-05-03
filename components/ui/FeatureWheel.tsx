@@ -1,23 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Bot, Workflow, LayoutDashboard, Zap, TrendingUp, Activity, Cpu, Layers } from "lucide-react";
 import Image from "next/image";
+import { featureWheelLeft, featureWheelRight } from '@/lib/portfolio';
 
 export default function FeatureWheel() {
-    const leftFeatures = [
-        { icon: Bot, title: "AI Voice Agents", top: "lg:top-[140px]" },
-        { icon: Workflow, title: "N8N Automation", top: "lg:top-[260px]" },
-        { icon: LayoutDashboard, title: "Next.js Web Apps", top: "lg:top-[380px]" },
-        { icon: Zap, title: "Tailwind CSS", top: "lg:top-[500px]" },
-    ];
-
-    const rightFeatures = [
-        { icon: TrendingUp, title: "GoHighLevel CRM", top: "lg:top-[140px]" },
-        { icon: Activity, title: "Make Integrations", top: "lg:top-[260px]" },
-        { icon: Cpu, title: "React & TypeScript", top: "lg:top-[380px]" },
-        { icon: Layers, title: "PostgreSQL", top: "lg:top-[500px]" },
-    ];
+    const leftFeatures = featureWheelLeft;
+    const rightFeatures = featureWheelRight;
 
     return (
         <section className="relative overflow-hidden bg-bg-primary py-24 sm:py-32 lg:py-48 w-full">

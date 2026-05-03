@@ -13,46 +13,22 @@ import {
     Sparkles,
     ArrowRight
 } from 'lucide-react';
+import { featurePageCards, portfolio } from '@/lib/portfolio';
 
 const FeaturesPage = () => {
-    const features = [
-        {
-            title: "UI/UX Designer",
-            description: "Crafting intuitive, high-fidelity interfaces that prioritize user centricity and premium aesthetics. We transform complex requirements into seamless visual journeys.",
-            icon: <Layout className="w-8 h-8" />,
-            delay: 0.1
-        },
-        {
-            title: "Full-Stack Developer",
-            description: "Building robust, scalable end-to-end solutions. From performance-optimized frontends to secure, high-concurrency backends with type-safe architectures.",
-            icon: <Database className="w-8 h-8" />,
-            delay: 0.2
-        },
-        {
-            title: "Frontend Engineer",
-            description: "Expertise in crafting ultra-responsive, pixel-perfect web experiences. Specialized in Next.js, Framer Motion animations, and complex state management.",
-            icon: <Monitor className="w-8 h-8" />,
-            delay: 0.3
-        },
-        {
-            title: "n8n Developer",
-            description: "Automating mission-critical business processes with advanced n8n orchestration. Engineering intelligent workflows that connect your entire tech stack autonomously.",
-            icon: <Activity className="w-8 h-8" />,
-            delay: 0.4
-        },
-        {
-            title: "Zapier Developer",
-            description: "Enabling rapid, powerful integrations through strategic Zapier automation. Connecting thousands of apps to drive efficiency and eliminate manual overhead.",
-            icon: <Zap className="w-8 h-8" />,
-            delay: 0.5
-        },
-        {
-            title: "AI Automation Expert",
-            description: "Integrating frontier AI models into production-ready workflows. Specialized in RAG, Agentic AI, and specialized LLM implementations for enterprise growth.",
-            icon: <Sparkles className="w-8 h-8" />,
-            delay: 0.6
-        }
+    const icons = [
+        <Layout className="w-8 h-8" key="layout" />,
+        <Database className="w-8 h-8" key="database" />,
+        <Monitor className="w-8 h-8" key="monitor" />,
+        <Activity className="w-8 h-8" key="activity" />,
+        <Zap className="w-8 h-8" key="zap" />,
+        <Sparkles className="w-8 h-8" key="sparkles" />,
     ];
+
+    const features = featurePageCards.map((feature, index) => ({
+        ...feature,
+        icon: icons[index % icons.length],
+    }));
 
     return (
         <div className="relative min-h-screen bg-bg-primary text-text-primary selection:bg-accent-primary selection:text-black overflow-hidden font-sans">
@@ -112,7 +88,7 @@ const FeaturesPage = () => {
                         transition={{ delay: 0.3 }}
                         className="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl font-medium leading-relaxed"
                     >
-                        We deploy elite technical solutions across the full spectrum of modern digital infrastructure. Precision-engineered for scale, performance, and impact.
+                        {portfolio.personal?.subtitle}
                     </motion.p>
                 </div>
 

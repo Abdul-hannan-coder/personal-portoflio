@@ -9,6 +9,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { Webhook } from 'lucide-react';
+import { faqItems } from '@/lib/portfolio';
 
 export default function FAQ() {
   const [openItem, setOpenItem] = useState<string>('');
@@ -38,38 +39,7 @@ export default function FAQ() {
     },
   };
 
-  const data = [
-    {
-      id: '1',
-      question: 'What kind of AI automation solutions do you offer?',
-      answer: 'We specialize in building seamless integrations using Make, N8N, and GoHighLevel. Our solutions range from automated lead generation systems and intelligent chat assistants to complex internal data workflows that save you hours every week.'
-    },
-    {
-      id: '2',
-      question: 'How long does it take to implement a custom AI solution?',
-      answer: 'The timeline depends on the complexity of your requirements. A straightforward chatbot or a simple Make automation can be deployed in a matter of days, whereas more complex enterprise-level integrations usually take 2 to 4 weeks from planning to launch.'
-    },
-    {
-      id: '3',
-      question: 'Do I need technical knowledge to use your automation?',
-      answer: 'Not at all! We build user-friendly interfaces and automated backend systems that work flawlessly behind the scenes. We also provide full training and documentation so your team can easily manage the solutions we deliver.'
-    },
-    {
-      id: '4',
-      question: 'Why should my business invest in AI automation?',
-      answer: 'AI automation significantly reduces manual, repetitive tasks, minimizes human error, and allows your team to focus on high-value, creative work. It directly improves operational efficiency, scales customer support, and increases overall profitability.'
-    },
-    {
-      id: '5',
-      question: 'Do you provide ongoing support after deployment?',
-      answer: 'Yes, absolutely. We offer flexible retainer and maintenance packages to ensure your automations run smoothly 24/7. We monitor the systems closely and update workflows as your business processes evolve.'
-    },
-    {
-      id: '6',
-      question: 'Which platforms and tools do you integrate with?',
-      answer: 'We connect major CRM platforms like GoHighLevel, HubSpot, and Salesforce, databases, communication tools like Slack and email, and powerful automation builders like Make and N8N to create a unified ecosystem tailored to your needs.'
-    }
-  ];
+  const data = faqItems;
 
   return (
     <section id="faq" className="relative flex w-full flex-col items-center justify-center py-24 bg-bg-primary">

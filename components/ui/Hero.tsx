@@ -4,18 +4,11 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import SocialLinks from "@/components/ui/SocialLinks";
 import LogoLoop from "@/components/ui/LogoLoop";
-const techLogos = [
-    { node: <span className="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap group-hover/item:text-accent-primary transition-colors duration-300">React</span> },
-    { node: <span className="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap group-hover/item:text-accent-primary transition-colors duration-300">Next.js</span> },
-    { node: <span className="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap group-hover/item:text-accent-primary transition-colors duration-300">TypeScript</span> },
-    { node: <span className="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap group-hover/item:text-accent-primary transition-colors duration-300">Tailwind CSS</span> },
-    { node: <span className="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap group-hover/item:text-accent-primary transition-colors duration-300">Framer Motion</span> },
-    { node: <span className="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap group-hover/item:text-accent-primary transition-colors duration-300">Node.js</span> },
-    { node: <span className="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap group-hover/item:text-accent-primary transition-colors duration-300">PostgreSQL</span> },
-    { node: <span className="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap group-hover/item:text-accent-primary transition-colors duration-300">N8N</span> },
-    { node: <span className="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap group-hover/item:text-accent-primary transition-colors duration-300">Make</span> },
-    { node: <span className="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap group-hover/item:text-accent-primary transition-colors duration-300">GoHighLevel</span> },
-];
+import { heroTechStack, portfolio } from '@/lib/portfolio';
+
+const techLogos = heroTechStack.map((tech) => ({
+    node: <span className="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap group-hover/item:text-accent-primary transition-colors duration-300">{tech}</span>
+}));
 
 export default function Hero() {
     return (
@@ -83,7 +76,7 @@ export default function Hero() {
                     transition={{ delay: 0.4, duration: 0.8 }}
                     className="text-gray-400 max-w-3xl mx-auto mb-16 text-lg md:text-xl font-medium leading-relaxed px-4"
                 >
-                    High-performance web applications with a focus on premium aesthetics and seamless user experiences. Specializing in Next.js, Framer Motion, and 3D web interfaces.
+                    {portfolio.personal?.subtitle}
                 </motion.p>
 
                 <motion.div
@@ -117,7 +110,7 @@ export default function Hero() {
                 className="w-full mt-0"
             >
                 <p className="text-xs font-semibold text-text-secondary uppercase tracking-wide mb-8 text-center opacity-60">
-                    Cutting-Edge AI Solutions & Automations
+                    {portfolio.personal?.tagline}
                 </p>
                 <LogoLoop
                     logos={techLogos}

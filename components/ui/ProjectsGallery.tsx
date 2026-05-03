@@ -1,14 +1,14 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Code2, Layers } from 'lucide-react';
+import { ArrowRight, Code2 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { projects } from '@/data/projects';
+import { portfolio, projects, type PortfolioProject } from '@/lib/portfolio';
 
 import { Zap } from 'lucide-react'; // ensure this is imported if not above
 
-const ProjectCard = ({ project, index }: { project: typeof projects[0], index: number }) => {
+const ProjectCard = ({ project, index }: { project: PortfolioProject, index: number }) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -128,7 +128,7 @@ const ProjectsGallery = () => {
                             transition={{ delay: 0.1 }}
                             className="text-xl text-gray-400 font-normal max-w-2xl mx-auto md:mx-0"
                         >
-                            Explore a comprehensive collection of my web applications, platforms, and SaaS products.
+                            {portfolio.projects?.subtitle}
                         </motion.p>
                     </div>
                     <motion.div

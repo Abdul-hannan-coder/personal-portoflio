@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowUpRight, Calendar, CheckCircle2, Globe, Server, Code, L
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import { Project, projects } from '@/data/projects';
+import { projects } from '@/lib/portfolio';
 import { notFound } from 'next/navigation';
 
 export default function ProjectDetail({ slug }: { slug: string }) {

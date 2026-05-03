@@ -5,12 +5,13 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Users, Sparkles, Layout } from 'lucide-react';
+import { navLinks, portfolio } from '@/lib/portfolio';
 
-const navLinks = [
-    { name: 'About Us', href: '/about', icon: Users },
-    { name: 'Features', href: '/features', icon: Sparkles },
-    { name: 'Projects', href: '/projects', icon: Layout },
-];
+const iconMap = {
+    '/about': Users,
+    '/features': Sparkles,
+    '/projects': Layout,
+};
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -54,13 +55,15 @@ const Navbar = () => {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2v7m-8.66 8L9.5 13.5m11.16 3.5L14.5 13.5" />
                             </svg>
                         </div>
-                        <span className="text-base sm:text-xl md:text-2xl whitespace-nowrap font-heading font-bold text-white tracking-tight group-hover:text-accent-primary transition-colors duration-300">Abdul Hannan</span>
+                        <span className="text-base sm:text-xl md:text-2xl whitespace-nowrap font-heading font-bold text-white tracking-tight group-hover:text-accent-primary transition-colors duration-300">{portfolio.personal?.name?.trim()}</span>
                     </Link>
 
                     {/* Desktop Links (Center) */}
                     <div className="hidden lg:flex items-center justify-center gap-8 flex-[2]">
-                        {navLinks.map((link) => {
-                            const Icon = link.icon;
+                        {navLinks
+                            .filter((link) => link.href !== '/' && link.href !== '/contact')
+                            .map((link) => {
+                            const Icon = iconMap[link.href as keyof typeof iconMap] || Layout;
                             return (
                                 <Link
                                     key={link.name}

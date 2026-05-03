@@ -1,14 +1,14 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Code2, Layers } from 'lucide-react';
+import { ArrowRight, Code2 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { projects } from '@/data/projects';
+import { featuredProjects, portfolio, type PortfolioProject } from '@/lib/portfolio';
 
 import { Zap } from 'lucide-react'; // ensure this is imported if not above
 
-const ProjectCard = ({ project, index }: { project: typeof projects[0], index: number }) => {
+const ProjectCard = ({ project, index }: { project: PortfolioProject, index: number }) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -97,7 +97,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
 };
 
 const Projects = () => {
-    const featuredProjects = projects.filter(p => p.isFeatured).slice(0, 6);
+    const featured = featuredProjects.slice(0, 6);
 
     return (
         <section id="projects" className="py-32 relative overflow-hidden">
@@ -138,12 +138,12 @@ const Projects = () => {
                         transition={{ delay: 0.1 }}
                         className="text-gray-400 max-w-2xl text-sm md:text-base leading-relaxed"
                     >
-                        Engineering a new standard of digital excellence. A curated collection of elite automation engines and full-stack ecosystems.
+                        {portfolio.projects?.subtitle}
                     </motion.p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                    {featuredProjects.map((project, index) => (
+                    {featured.map((project, index) => (
                         <ProjectCard key={project.slug} project={project} index={index} />
                     ))}
                 </div>
